@@ -54,6 +54,7 @@ let questions = [
 
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
+const TIME = 1
 
 startQuiz = () => {
     questionCounter = 0
@@ -64,8 +65,8 @@ startQuiz = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        
-        return window.location.assign('')
+        localStorage.setItem('mostRecentScore' , score)
+        return window.location.assign('end.html')
     }
 
     questionCounter++
@@ -124,14 +125,15 @@ let counting = document.getElementById("count-down");
 function startCountdown(){
     let quizTimer = setInterval(function(){
     if(quizTime <= 0) {
-        clearInterval(quizTimer);
-        showScores();
+        clearInterval(quizTimer)
+        showScores()
     } else {
         quizTime--;
-        let sec = Math.floor(quizTime % 60);
-        let min = Math.floor(quizTime / 60) % 60;
-        counting.innerHTML = `TIME: ${min} : ${sec}`;   
+        let sec = Math.floor(quizTime % 60)
+        let min = Math.floor(quizTime / 60) % 60
+        counting.innerHTML = `TIME: ${min} : ${sec}`   
     }
+
 },1000);
 }
 
