@@ -1,0 +1,33 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 4px;
+    background-color: white;
+    font-size:2rem;
+    min-width: 50rem;
+}
+
+.choice-container:hover {
+    cursor: crosshair;
+    transform: scale(1.02);
+    transform: trasnform 100ms;
+}
+
+.choice-sub {
+    color: white;
+}
+
+.choice-text {
+    width: 100%;
+}
+
+#count-down {
+    font-size: 3rem;
+}
+
+@media screen and (max-width:768px) {
+    .choice-container {
+        min-width: 40rem;
+    }
+}
