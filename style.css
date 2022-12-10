@@ -1,3 +1,4 @@
+/* Targeting main background color of app */
 :root {
     background-color: teal;
 }
@@ -14,7 +15,7 @@ h1{
     margin-bottom: 5rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+/* Trageting the container element */
 .container {
     width: 100vh;
     height: 100vh;
@@ -24,7 +25,7 @@ h1{
     max-width: 0 auto;
     padding: 3rem;
 }
-
+/* Styling for all buttons on application */
 .btn {
     font-size:45px;
     padding: 35px;
@@ -36,10 +37,25 @@ h1{
     border-radius:3.5px;
 }
 
+/* Moving over buttons will cause cursor to change to crosshair */
 .btn:hover {
     cursor:crosshair;
 }
-
+/* To go to leaderboard the button changes color to brown */
 #leaderboard-btn {
     background-color: brown;
 }
+
+#finalScore {
+    color: black;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+/* Media query to resize on devices */
+@media screen and (max-device-width: 640px) {
+    .gfg-div {
+      width: 400px;
+      height: 200px;
+      color: black;
+    }
+  }

@@ -1,3 +1,4 @@
+/* Taregts questions ,background of questions will be white */
 .choice-container {
     display: flex;
     margin-bottom: 0.8rem;
@@ -7,7 +8,7 @@
     font-size:2rem;
     min-width: 50rem;
 }
-
+/* Hovering over questions will cause the transform and cursor to change */
 .choice-container:hover {
     cursor: crosshair;
     transform: scale(1.02);
@@ -21,13 +22,15 @@
 .choice-text {
     width: 100%;
 }
-
+/* Size of the timer  */
 #count-down {
     font-size: 3rem;
 }
-
-@media screen and (max-width:768px) {
-    .choice-container {
-        min-width: 40rem;
+/* Media querys for resize of app */
+@media screen and (max-device-width: 640px) {
+    .gfg-div {
+      width: 400px;
+      height: 200px;
+      color: black;
     }
-}
+  }

@@ -10,15 +10,19 @@
 <body>
     <div class="container">
         <div id="end">
+            <!-- Displays the users score after the quiz -->
             <h1 id ="finalScore">0</h1>
             <form class ="end-form-container">
                 <h2 id ="end-text"> Enter your intials to save your score!</h2>
+                <!-- Fixing issue, should allow user to save score with name -->
                 <input type ="text" name ="name" id = "username">
-                <button class ="btn" id = "saveScoreBtn" type ="sumbit" onclick="saveHighScore(event)"></button>
+                <button class ="btn" id = "saveScoreBtn" type ="sumbit" onclick="saveHighScore('click')"></button>
             </form>
+            <!-- Links to let the user play again or go to the home page -->
             <a href ="quiz.html" class = "btn">Play Again?</a>
             <a href ="index.html" class ="btn">Home</a>
         </div>
     </div>
+    <script src ="end.js"></script>
 </body>
 </html>

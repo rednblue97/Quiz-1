@@ -1,3 +1,5 @@
+// Assigning all variables for functions here
+
 const question = document.querySelector('#question')
 const choices = Array.from(document.querySelectorAll('.choice-text'))
 const progressText = document.querySelector('#progressText')
@@ -8,6 +10,8 @@ let trueAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
+
+//Setting up the questions with correct answers
 
 let questions = [
     {
@@ -56,6 +60,7 @@ const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 const TIME = 1
 
+// Function to start quiz, timer and score
 startQuiz = () => {
     questionCounter = 0
     score = 0
@@ -63,9 +68,11 @@ startQuiz = () => {
     getNewQuestion()
 }
 
+// Getting new questions, allowing the quiz to end if no more questions, saving the most recent score, grabbing a random question from the listed questions
+
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('finalScore' , score)
+        localStorage.setItem('mostRecentScore' , score)
         return window.location.assign('end.html')
     }
 
@@ -86,6 +93,7 @@ getNewQuestion = () => {
     trueAnswers = true
 }
 
+// Checks for correct answers to add to score points 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!trueAnswers) return
@@ -111,11 +119,13 @@ choices.forEach(choice => {
     })
 })
 
+// Scores points if user answers correctly
 incrementScore = num => {
     score +=num
     scoreText.innerText =score
 }
 
+// Timer function, if time runs out, will display the users score, timer is set to 1 minute
 let time = 1;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
@@ -126,17 +136,26 @@ function startCountdown(){
     let quizTimer = setInterval(function(){
     if(quizTime <= 0) {
         clearInterval(quizTimer)
-        showScores()
+        localStorage.setItem('mostRecentScore' , score)
+        return window.location.assign('end.html')
     } else {
         quizTime--;
         let sec = Math.floor(quizTime % 60)
         let min = Math.floor(quizTime / 60) % 60
-        counting.innerHTML = `TIME: ${min} : ${sec}`   
+        counting.innerHTML = `TIME: ${min} : ${sec}`  
+     if (quizTimer === 0) {
+        clearInterval(quizTimer)
+        localStorage.setItem('mostRecenetScore' , score)
+        return window.location.assign('end.html')
+     }
     }
 
 },1000);
+
 }
 
+// Starts the timer, starts the quiz
 startCountdown()
 
 startQuiz()
+

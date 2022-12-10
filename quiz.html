@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <!-- Links to both stylesheets being used -->
     <link rel ="stylesheet" href ="style.css">
     <link rel ="stylesheet" href ="quiz.css">
 </head>
@@ -13,9 +14,11 @@
         <div id ="quiz">
             <div id ="hud">
                 <div class ="hud-item">
+                    <!-- Allows the user to see the progress of the quiz -->
                     <p id ="progressText" class ="hud-sub">
                         1 of 5
                     </p>
+                    <!-- Allows the user to see the score of the quiz, and what value that score is -->
                     <div class ="hud-item">
                         <p class ="hud-sub">
                             Score
@@ -25,6 +28,7 @@
                         </h1>
                     </div>
                 </div>
+                <!-- This is setting up the main question along with timer, questions, and the given options -->
             <h1 id ="question"> What does Javascript do?</h1>  
             <p id ="count-down">1</p>  
             <div class ="choice-container">
