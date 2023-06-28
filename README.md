@@ -10,4 +10,4 @@ I had several issues with saving the users name in local storage. I was only abl
 ![Capture](https://user-images.githubusercontent.com/114364879/206875756-b634f22d-1ba9-4791-93e2-36a3d2472a9f.JPG)
 
 ## Deployed Link 
-https://captureb.github.io/Quiz-1/
+https://rednblue97.github.io/Quiz-1/
